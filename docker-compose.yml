@@ -2,6 +2,8 @@ version: '3' # composeファイルのバーション指定
 services:
   app: # service名
     build: . # ビルドに使用するDockerfileがあるディレクトリ指定
+    ports: # 外部と接続する(外部:docker)
+      - '8080:8080'
     tty: true # コンテナの起動永続化
     volumes:
       - .:/go/src/work # マウントディレクトリ指定
